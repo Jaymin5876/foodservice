@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header class="bg-primary text-white text-center p-4">
+    <h1>Food Delivery Service</h1>
+    <p>Your favorite meals delivered fast!</p>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Food Delivery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#order">Order</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="btn btn-success mr-2" href="signup.html">Signup</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-primary" href="login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section id="menu" class="container my-5">
+    <h2 class="text-primary">Our Menu</h2>
+    <div class="row">
+        <!-- Menu Item 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="cheeseburger.jpg" class="card-img-top" alt="Cheeseburger">
+                <div class="card-body">
+                    <h5 class="card-title">Cheeseburger</h5>
+                    <p class="card-text">Juicy beef patty with cheddar cheese, lettuce, tomato, and pickles.</p>
+                    <p class="card-text"><strong>Rs.45</strong></p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#itemModal"
+                            onclick="openModal('Cheeseburger', 'Juicy beef patty with cheddar cheese, lettuce, tomato, and pickles.', 'Rs.45')">Details</button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Item 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="pizzamargherita.jpg" class="card-img-top" alt="Margherita Pizza">
+                <div class="card-body">
+                    <h5 class="card-title">Margherita Pizza</h5>
+                    <p class="card-text">Classic pizza with fresh tomatoes, mozzarella cheese, and basil.</p>
+                    <p class="card-text"><strong>Rs.80</strong></p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#itemModal"
+                            onclick="openModal('Margherita Pizza', 'Classic pizza with fresh tomatoes, mozzarella cheese, and basil.', 'Rs.80')">Details</button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Item 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="gujaratithali.jpg" class="card-img-top" alt="Gujarati Thali">
+                <div class="card-body">
+                    <h5 class="card-title">Gujarati Thali</h5>
+                    <p class="card-text">A traditional Gujarati meal with laddu, roti, sabji, dal-bhat, chhas, papad, salad, and onion.</p>
+                    <p class="card-text"><strong>Rs.100</strong></p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#itemModal"
+                            onclick="openModal('Gujarati Thali', 'A traditional Gujarati meal with laddu, roti, sabji, dal-bhat, chhas, papad, salad, and onion.', 'Rs.100')">Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="order" class="container my-5">
+    <h2 class="text-primary">Order Now</h2>
+    <form id="orderForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="message">Order Details</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Order</button>
+    </form>
+</section>
+
+<section id="contact" class="container my-5">
+    <h2 class="text-primary">Contact Us</h2>
+    <p>If you have any questions or need assistance, please reach out to us:</p>
+    <p>Email: <a href="mailto:abcd@xyz.com">abcd@xyz.com</a></p>
+    <p>Phone: +91 4374434898</p>
+</section>
+
+<!-- Item Modal -->
+<div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="itemModalLabel">Item Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4 id="itemName"></h4>
+                <p id="itemDescription"></p>
+                <p id="itemPrice"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-primary text-white text-center p-3">
+    <p>&copy; 2024 Food Delivery Service. All rights reserved.</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
